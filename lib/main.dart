@@ -26,9 +26,20 @@ class DiceScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Expanded(child: Image.asset('assets/images/dice1.png')),
-        Expanded(child: Image.asset('assets/images/dice2.png')),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Image.asset('assets/images/dice1.png'),
+          ),
+        ),
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Image.asset('assets/images/dice2.png'),
+          ),
+        ),
       ],
     );
   }
