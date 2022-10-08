@@ -40,30 +40,31 @@ class _DiceScreenState extends State<DiceScreen> {
         children: [
           Expanded(
             child: InkWell(
+              onTap: _changeDiceNumbers,
               child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: Image.asset('assets/images/dice$leftDiceNumber.png'),
               ),
-              onTap: () => setState(() {
-                leftDiceNumber = 1 + Random().nextInt(6);
-                rightDiceNumber = 1 + Random().nextInt(6);
-              }),
             ),
           ),
           Expanded(
             child: InkWell(
+              onTap: _changeDiceNumbers,
               child: Padding(
                 padding: const EdgeInsets.all(8),
                 child: Image.asset('assets/images/dice$rightDiceNumber.png'),
               ),
-              onTap: () => setState(() {
-                leftDiceNumber = 1 + Random().nextInt(6);
-                rightDiceNumber = 1 + Random().nextInt(6);
-              }),
             ),
           ),
         ],
       ),
     );
+  }
+
+  void _changeDiceNumbers() {
+    setState(() {
+      leftDiceNumber = 1 + Random().nextInt(6);
+      rightDiceNumber = 1 + Random().nextInt(6);
+    });
   }
 }
