@@ -31,6 +31,7 @@ class DiceScreen extends StatefulWidget {
 
 class _DiceScreenState extends State<DiceScreen> {
   int leftDiceNumber = 1;
+  int rightDiceNumber = 1;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -47,9 +48,13 @@ class _DiceScreenState extends State<DiceScreen> {
             ),
           ),
           Expanded(
-            child: TextButton(
-              child: Image.asset('assets/images/dice2.png'),
-              onPressed: () => debugPrint('Right Button got pressed.'),
+            child: InkWell(
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Image.asset('assets/images/dice$rightDiceNumber.png'),
+              ),
+              onTap: () =>
+                  setState(() => rightDiceNumber = 1 + Random().nextInt(6)),
             ),
           ),
         ],
