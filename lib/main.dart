@@ -25,6 +25,8 @@ class DiceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var leftDiceNumber = 3;
+
     return Center(
       child: Row(
         children: [
@@ -32,7 +34,7 @@ class DiceScreen extends StatelessWidget {
             child: InkWell(
               child: Padding(
                 padding: const EdgeInsets.all(8),
-                child: Image.asset('assets/images/dice1.png'),
+                child: Image.asset('assets/images/dice$leftDiceNumber.png'),
               ),
               onTap: () => debugPrint('Left Button got pressed.'),
             ),
