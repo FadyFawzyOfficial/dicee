@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -40,7 +42,8 @@ class _DiceScreenState extends State<DiceScreen> {
                 padding: const EdgeInsets.all(8),
                 child: Image.asset('assets/images/dice$leftDiceNumber.png'),
               ),
-              onTap: () => setState(() => leftDiceNumber = 3),
+              onTap: () =>
+                  setState(() => leftDiceNumber = 1 + Random().nextInt(6)),
             ),
           ),
           Expanded(
