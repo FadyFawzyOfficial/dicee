@@ -35,25 +35,21 @@ class _DiceScreenState extends State<DiceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return InkWell(
+      onTap: _changeDiceNumbers,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
-            child: InkWell(
-              onTap: _changeDiceNumbers,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Image.asset('assets/images/dice$leftDiceNumber.png'),
-              ),
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Image.asset('assets/images/dice$leftDiceNumber.png'),
             ),
           ),
           Expanded(
-            child: InkWell(
-              onTap: _changeDiceNumbers,
-              child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: Image.asset('assets/images/dice$rightDiceNumber.png'),
-              ),
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Image.asset('assets/images/dice$rightDiceNumber.png'),
             ),
           ),
         ],
