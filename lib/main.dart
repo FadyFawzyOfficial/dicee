@@ -32,6 +32,7 @@ class DiceScreen extends StatefulWidget {
 class _DiceScreenState extends State<DiceScreen> {
   int leftDiceNumber = 1;
   int rightDiceNumber = 1;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -43,8 +44,10 @@ class _DiceScreenState extends State<DiceScreen> {
                 padding: const EdgeInsets.all(8),
                 child: Image.asset('assets/images/dice$leftDiceNumber.png'),
               ),
-              onTap: () =>
-                  setState(() => leftDiceNumber = 1 + Random().nextInt(6)),
+              onTap: () => setState(() {
+                leftDiceNumber = 1 + Random().nextInt(6);
+                rightDiceNumber = 1 + Random().nextInt(6);
+              }),
             ),
           ),
           Expanded(
@@ -53,8 +56,10 @@ class _DiceScreenState extends State<DiceScreen> {
                 padding: const EdgeInsets.all(8),
                 child: Image.asset('assets/images/dice$rightDiceNumber.png'),
               ),
-              onTap: () =>
-                  setState(() => rightDiceNumber = 1 + Random().nextInt(6)),
+              onTap: () => setState(() {
+                leftDiceNumber = 1 + Random().nextInt(6);
+                rightDiceNumber = 1 + Random().nextInt(6);
+              }),
             ),
           ),
         ],
