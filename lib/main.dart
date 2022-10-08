@@ -20,13 +20,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class DiceScreen extends StatelessWidget {
+class DiceScreen extends StatefulWidget {
   const DiceScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    var leftDiceNumber = 3;
+  State<DiceScreen> createState() => _DiceScreenState();
+}
 
+class _DiceScreenState extends State<DiceScreen> {
+  int leftDiceNumber = 1;
+  @override
+  Widget build(BuildContext context) {
     return Center(
       child: Row(
         children: [
@@ -36,7 +40,7 @@ class DiceScreen extends StatelessWidget {
                 padding: const EdgeInsets.all(8),
                 child: Image.asset('assets/images/dice$leftDiceNumber.png'),
               ),
-              onTap: () => debugPrint('Left Button got pressed.'),
+              onTap: () => setState(() => leftDiceNumber = 3),
             ),
           ),
           Expanded(
