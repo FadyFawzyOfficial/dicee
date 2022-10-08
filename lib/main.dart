@@ -25,22 +25,26 @@ class DiceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Image.asset('assets/images/dice1.png'),
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            child: InkWell(
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Image.asset('assets/images/dice1.png'),
+              ),
+              onTap: () => debugPrint('Left Button got pressed.'),
+            ),
           ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Image.asset('assets/images/dice2.png'),
+          Expanded(
+            child: TextButton(
+              child: Image.asset('assets/images/dice2.png'),
+              onPressed: () => debugPrint('Right Button got pressed.'),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
